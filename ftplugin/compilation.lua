@@ -93,16 +93,17 @@ set("n", "gf", compile_mode._gf)
 set("n", "<C-w>f", compile_mode._CTRL_W_f)
 set("n", "<C-g>f", "<cmd>NextErrorFollow<cr>")
 
-autocmd("CursorMoved", {
-	desc = "Next Error Follow",
-	buffer = bufnr,
-	callback = compile_mode._follow_cursor,
-})
+-- autocmd("CursorMoved", {
+-- 	desc = "Next Error Follow",
+-- 	buffer = bufnr,
+-- 	callback = compile_mode._follow_cursor,
+-- })
+--
+-- autocmd({ "TextChanged", "TextChangedI" }, {
+-- 	desc = "Error Parsing",
+-- 	buffer = bufnr,
+-- 	callback = function ()
+-- 		compile_mode._parse_errors(bufnr)
+-- 	end,
+-- })
 
-autocmd({ "TextChanged", "TextChangedI" }, {
-	desc = "Error Parsing",
-	buffer = bufnr,
-	callback = function ()
-		compile_mode._parse_errors(bufnr)
-	end,
-})
