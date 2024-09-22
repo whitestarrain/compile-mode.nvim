@@ -169,6 +169,7 @@ local runjob = a.wrap(function(cmd, bufnr, param, callback)
 
 	vim.api.nvim_create_autocmd({ "BufDelete" }, {
 		buffer = bufnr,
+		group = vim.api.nvim_create_augroup("compile-mode-bufdelete", { clear = true }),
 		callback = function()
 			vim.fn.jobstop(job_id)
 		end,
